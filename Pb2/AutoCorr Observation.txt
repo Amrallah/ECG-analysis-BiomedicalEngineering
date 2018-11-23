@@ -1,0 +1,19 @@
+-Autocorrelation graph in pb2 seems to have +ve value in a wider range of lags, meaning that the heartrate is faster.
+
+-also we can prove that if we measure heart rate from the peak after lag 0
+heart rate = 60/(lag/512) = 60/(236/512) = 130 bpm
+
+-faster heart rate could happen if there's sinus tachycardia or Atrial Fibrillation, from observation of Raw ECG the P wave has a different shape which is a property of Atrial Arrhythmias
+
+so Data2 is for a person who has Atrial Fibrillation.
+
+- a measure that can be computed from the autocorrelation that increases as the amount of Atrial Fibrillation increases is avg heart rate,
+we can use a threshold at 0.6*10^7 and get the peaks over that threshold, then calculate heart rate from lags corresponding to peaks.
+if avg heart rate > 100 then it's Atrial Fibrillation. 
+
+if we apply this on pb1(printed output is):
+avg heart rate = 68.04370324268633 bpm
+
+and on pb2:
+avg heart rate = 130.39682780797057 bpm
+Atrial Fibrillation detected!

@@ -1,0 +1,2 @@
+lag at 457
+heart rate = 60/(lag/512) = 67.22 bpm
